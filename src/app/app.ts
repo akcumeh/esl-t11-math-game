@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { MathGameComponent } from './math-game/math-game';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+    selector: 'app-root',
+    imports: [MathGameComponent],
+    templateUrl: './app.html',
+    styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('esl-t11-math-game');
 }

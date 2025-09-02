@@ -2,17 +2,6 @@
 
 @include mat.core();
 
-$primary: mat.define-palette(mat.$indigo-palette);
-$accent: mat.define-palette(mat.$pink-palette);
-$warn: mat.define-palette(mat.$red-palette);
-
-$theme: mat.define-light-theme((color: (primary: $primary,
-                accent: $accent,
-                warn: $warn,
-            )));
-
-@include mat.all-component-themes($theme);
-
 html,
 body {
     height: 100%;
@@ -20,11 +9,4 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: #FEE2B3;
     color: #562349;
-}
-
-:root {
-    --primary-text: #562349;
-    --accent-1: #AD6989;
-    --accent-2: #FFA299;
-    --background: #FEE2B3;
 }

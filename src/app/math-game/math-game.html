@@ -1,1 +1,52 @@
-<p>math-game works!</p>
+<div class="game-container">
+    <header>
+        <h1>Math Game</h1>
+        <p>Type in the answer to the math equation and press Enter. Good luck!</p>
+    </header>
+
+    <form class="math-form" (ngSubmit)="onSubmit()">
+        <div class="question-row">
+            <mat-form-field appearance="outline" class="number-box">
+                <input matInput [value]="currentQuestion().num1" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="operator-box">
+                <input matInput [value]="currentQuestion().operator" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="number-box">
+                <input matInput [value]="currentQuestion().num2" readonly>
+            </mat-form-field>
+
+            <span class="equals">=</span>
+
+            <mat-form-field appearance="outline"
+                            class="answer-box"
+                            [class.correct-feedback]="showFeedback() && feedback() !== 'Wrong!'"
+                            [class.incorrect-feedback]="showFeedback() && feedback() === 'Wrong!'">
+                <mat-label>{{ feedback() }}</mat-label>
+                <input matInput
+                       type="number"
+                       [formControl]="answerControl"
+                       (keydown.enter)="onSubmit()">
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div class="score-section">
+        <div class="score">
+            <h2>Score</h2>
+            <p>Correct: {{ correctCount() }}</p>
+            <p>Incorrect: {{ incorrectCount() }}</p>
+            <p>Total: {{ totalQuestions() }}</p>
+        </div>
+        <div class="hiscore">
+            <h2>Hi Score</h2>
+            <p>{{ hiScorePercentage() }}%</p>
+        </div>
+    </div>
+
+    <button mat-raised-button color="primary" class="reset-button" (click)="resetGame()">
+        Reset Game
+    </button>
+</div>

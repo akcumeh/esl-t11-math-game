@@ -1,0 +1,160 @@
+.math-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: #FEE2B3;
+  color: #562349;
+}
+
+.game-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 12px;
+  min-width: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  &.correct {
+    background-color: #AD6989;
+    color: white;
+  }
+  
+  &.incorrect {
+    background-color: #FFA299;
+    color: #562349;
+  }
+  
+  &.total {
+    background-color: #562349;
+    color: white;
+  }
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.question {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #562349;
+  text-align: center;
+  margin: 0;
+}
+
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.answer-input {
+  width: 200px;
+  
+  ::ng-deep .mat-mdc-form-field-outline {
+    color: #562349;
+  }
+  
+  ::ng-deep .mat-mdc-form-field-label {
+    color: #562349;
+  }
+}
+
+.submit-button {
+  min-width: 200px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.feedback {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeInScale 0.3s ease-in-out;
+  
+  &.correct {
+    background-color: #AD6989;
+    color: white;
+  }
+  
+  &.incorrect {
+    background-color: #FFA299;
+    color: #562349;
+  }
+}
+
+.correct-answer {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-weight: normal;
+}
+
+.game-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-button {
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .question {
+    font-size: 2rem;
+  }
+  
+  .game-stats {
+    gap: 1rem;
+  }
+  
+  .stat {
+    min-width: 80px;
+    padding: 0.75rem;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}

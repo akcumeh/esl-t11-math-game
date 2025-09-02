@@ -1,0 +1,160 @@
+.game-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 3rem;
+
+    h1 {
+        color: #562349;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: #562349;
+        font-size: 1.2rem;
+    }
+}
+
+.math-form {
+    margin-bottom: 3rem;
+}
+
+.question-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.number-box,
+.operator-box {
+    width: 80px;
+
+    input {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #562349;
+    }
+
+    input:disabled {
+        color: #ad6989;
+    }
+
+    ::ng-deep .mdc-notched-outline {
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+            border-color: #ad6989 !important;
+        }
+    }
+}
+
+.answer-box {
+    width: 120px;
+
+    input {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #562349;
+    }
+
+    input::placeholder {
+        text-align: center;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    ::ng-deep .mat-mdc-form-field-required-marker {
+        display: none !important;
+    }
+
+    ::ng-deep .mdc-notched-outline {
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+            border-color: #562349 !important;
+        }
+    }
+}
+
+.equals {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #562349;
+    margin: 0 0.5rem;
+}
+
+.correct-feedback {
+    ::ng-deep .mdc-notched-outline {
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+            border-color: #4caf50 !important;
+            border-width: 2px !important;
+        }
+    }
+}
+
+.incorrect-feedback {
+    ::ng-deep .mdc-notched-outline {
+        .mdc-notched-outline__leading,
+        .mdc-notched-outline__notch,
+        .mdc-notched-outline__trailing {
+            border-color: #f44336 !important;
+            border-width: 2px !important;
+        }
+    }
+}
+
+.score-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    background-color: #AD6989;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: 50%;
+    margin: 0 auto 3rem;
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+    }
+}
+
+.reset-button {
+    background-color: #AD6989 !important;
+    color: #FEE2B3 !important;
+    font-size: 1.25rem;
+    padding: 0.8rem 2rem;
+}
+
+.reset-button:hover {
+    background-color: #562349 !important;
+    color: #FFA299 !important;
+    transition: 0.5s all ease-in-out;
+}
